@@ -1,0 +1,11 @@
+{
+  "Product": {
+    "id": { "int": { "min": 0, "max": 100000 } },
+    "price": { "int": { "min": 10, "max": 2000 } },
+    "description": {
+      "loremWords": { "minLength": 2, "maxLength": 20 }
+    },
+    "quantity": { "int": { "min": 0, "max": 1000 } },
+    "image": { "string": {} }
+  }
+}

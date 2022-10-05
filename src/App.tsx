@@ -3,17 +3,31 @@ import { Product, ProductCard } from "./components/ProductCard";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/products")
-      .then((response) => response.json)
-      .then((products) => console.log(products));
+    fetch("https://fakestoreapi.com/products/")
+      .then((res) => res.json())
+      .then((json) => {
+        setProducts(json);
+        setIsLoading(false);
+      })
+      .catch((err) =>
+        setError("An error happening while getting the products")
+      );
   }, []);
 
   return (
     <div className="App">
       <aside className="cart"></aside>
-      <main className="products"></main>
+      <main className="products">
+        {products?.map((product: Product) => (
+          <ProductCard key={product.id} {...product} />
+        ))}
+        {isLoading && <h1>Loading...</h1>}
+        {error && <strong>{error}</strong>}
+      </main>
     </div>
   );
 }

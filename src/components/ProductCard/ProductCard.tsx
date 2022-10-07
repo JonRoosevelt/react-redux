@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import "./Productcard.css";
 
 export interface Product {
   id: number;
@@ -15,11 +16,11 @@ export interface Product {
 
 export const ProductCard: FC<Product> = (props) => {
   return (
-    <div className="product">
+    <div className="Product">
       <h1>{props.title}</h1>
       <img src={props.image} />
-      <p>{props.description}</p>
-      <span>{props.price}</span>
+      <p className="product-description">{props.description}</p>
+      <p className="product-price">${props.price}</p>
     </div>
   );
 };

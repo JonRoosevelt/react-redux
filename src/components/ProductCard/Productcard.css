@@ -1,0 +1,51 @@
+.Product {
+  padding: 0 1rem 1rem 1rem;
+  height: 540px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  overflow: hidden;
+}
+
+.Product img {
+  height: 150px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.Product h1,
+p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-description {
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  height: 90px;
+  margin: 10 auto;
+  font-size: 18px;
+  line-height: 1;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Product h1 {
+  color: navy;
+}
+
+.product-price {
+  margin: 0 1rem 1rem 0;
+  font-size: 48px;
+  font-weight: 700;
+  display: flex;
+  justify-content: flex-end;
+  color: red;
+}

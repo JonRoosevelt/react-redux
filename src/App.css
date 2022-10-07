@@ -1,0 +1,30 @@
+.App {
+  font-family: "Arial", sans-serif, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  background-color: "red";
+}
+
+.products {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.App h1 {
+  font-size: 32px;
+  font-weight: 500;
+  color: "blue";
+}
